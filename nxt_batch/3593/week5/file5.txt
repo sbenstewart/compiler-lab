@@ -1,0 +1,7 @@
+for (i=0;i<n;i++)
+{
+statement1;
+for (j=0;j<n;j++)
+{
+statement2;
+}

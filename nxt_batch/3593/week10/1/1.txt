@@ -1,0 +1,8 @@
+while(a<b){}
+while(a<b){print(sombhu)}
+if(a>b){print(siva)}
+
+
+while(a<b){}
+if(>b){}
+

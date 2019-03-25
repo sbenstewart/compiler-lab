@@ -1,0 +1,9 @@
+if(a<2){
+if(b<2){
+print(a)
+}
+else{
+print(b)
+}
+}
+

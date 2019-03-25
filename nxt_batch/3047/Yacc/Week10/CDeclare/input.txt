@@ -1,0 +1,7 @@
+int m;
+int a,b,c;
+float q,w,r;
+double x,y,z;
+char l,p;
+for
+while

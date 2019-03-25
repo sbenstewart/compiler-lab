@@ -1,0 +1,6 @@
+if (i<0)
+i++;
+else if (i>0)
+i--;
+else
+i=0;

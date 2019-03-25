@@ -1,0 +1,26 @@
+%{
+int niden,nassign,noper,nwhite,nconst,nkey,nspec;
+%}
+digit[0-9]
+letter[A-Za-z]
+digits [0-9][0-9]*
+%%
+"void"|"def"|"return"|"print"|"scan"|"if"|"else"|"for"|"while" {nkey++;printf("Keywords : %s\n",yytext);} 
+"+"|"*"|"/"|"-"|">"|"<"|">="|"<=" {noper++;printf("operator : %s\n",yytext);}
+[ \t\n]+ {nwhite++;}
+{digits} {nconst++; printf("Constants : %s\n",yytext);}
+[=] {nassign++;printf("assign : %s\n",yytext);}
+{letter}({letter}|{digit})* {niden++;printf("identifier : %s\n",yytext);}
+{digit}+({letter}|{digit})* {niden--;}
+. {printf("Special Characters : %s\n",yytext);nspec++;}
+
+
+
+%%
+int main(void)
+{
+yyin=fopen("file.txt","r");
+yylex();
+printf("\n Ws: %d \n Operator: %d \n Assignment: %d \n identifier: %d \n  Constant: %d \n Keywords: %d \n Special Characters: %d \n",nwhite,noper,nassign,niden,nconst,nkey,nspec);
+return 0;
+} 

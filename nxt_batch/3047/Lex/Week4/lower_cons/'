@@ -1,0 +1,10 @@
+%option noyywrap
+%%
+[a-z] printf("%s",yytext);
+[^a-z] printf("no\n");
+%%
+int main()
+{
+	yylex();
+	return 0;
+}

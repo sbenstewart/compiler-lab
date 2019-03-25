@@ -1,0 +1,24 @@
+%{
+int id=0;
+int rel=0;
+int pre=0;
+int post=0;
+int add=0;
+%}
+%option noyywrap
+alp [a-z]
+spl [+]
+rel [=]
+%%
+{alp} {id++;}
+{rel} {rel++;}
+{alp}"++" {post++;id++;}
+"++"{alp} {pre++;id++;}
+{spl} {add++;}
+%%
+int main()
+{
+	yylex();
+	printf("%d",id);
+	return 0;
+}

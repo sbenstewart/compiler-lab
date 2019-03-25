@@ -1,0 +1,9 @@
+int a
+while(a<2){
+int b
+while(b<2){
+print(a)
+b++
+}
+a++
+}

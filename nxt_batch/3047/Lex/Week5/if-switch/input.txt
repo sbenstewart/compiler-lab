@@ -1,0 +1,11 @@
+if(a==1)
+{
+	print(a);
+}
+else if(a==2)
+{
+	printf(a);
+}
+else {
+	printf(a);
+}

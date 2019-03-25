@@ -1,0 +1,21 @@
+%option noyywrap
+%{
+	int flag = 0;
+%}
+type [int|float]
+alpha [a-zA-Z]*
+equ [=]
+rel [<|>]
+inc [++|--]
+num [0-9]*
+%s START
+%s SUBY
+%s COPY
+%s PUSH
+%%
+<INITIAL>"for" {printf("if(");BEGIN START;}
+<START>"("{alpha}{equ}{num}";" {BEGIN SUBY;}
+<SUBY>{alpha}{rel}{num} {ECHO;BEGIN COPY;} 
+<COPY>";"{alpha}"++)" {BEGIN PUSH;}
+<PUSH>"{"[\n\t]* {printf("{\n");BEGIN INITIAL;}
+%%
