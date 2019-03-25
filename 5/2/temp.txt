@@ -1,0 +1,1 @@
+switch(x){case 0:printf("0");case 1:printf("1");default:printf("Undefined");}

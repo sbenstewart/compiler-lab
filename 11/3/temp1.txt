@@ -1,0 +1,2 @@
+switch(a){case 1:{a=5;a=b;break;}default : {a=4;}}
+switch(a){case 1:{switch(b){case 0:{break;}}break;}default : {a=4;}}

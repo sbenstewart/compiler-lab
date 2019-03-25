@@ -1,0 +1,1 @@
+#DEFINE sum(x) x+x

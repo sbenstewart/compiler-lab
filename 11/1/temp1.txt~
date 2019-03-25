@@ -1,0 +1,3 @@
+a:=b[i]+c[j]
+a[i]:=b*c+b*d
+h:=a+a*(b-c)+(b-c)*d

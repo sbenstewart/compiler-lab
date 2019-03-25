@@ -1,0 +1,32 @@
+%{
+#include<stdio.h>
+void yyerror(char *);
+int yylex(void);
+%}
+%token FOR ANY
+%%
+program: program for '\n' {printf("Matched loops");}
+| program '\n'
+| /* empty */
+;
+
+for :
+FOR '(' any ')' '{' any '}'
+| /* empty */
+;
+
+any :
+ANY any
+| /* empty */
+;
+
+%%
+void yyerror(char *s)
+{
+printf("%s\n",s);
+}
+int main(void)
+{
+yyparse();
+return 0;
+}

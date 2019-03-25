@@ -1,0 +1,15 @@
+lower [a-z]
+upper [A-Z]
+delimiter [ \t\n]
+%%
+{delimiter}+ {}
+{upper}+ {
+printf(" \t Upper =");
+ECHO;
+printf(" Start word 1st yymore %s\n",yytext);
+yymore();
+printf(" End:	 word 1st yymore %s\n",yytext);
+}
+
+{lower}+ {printf("%s \t Lower\n",yytext);yymore();}
+%%
